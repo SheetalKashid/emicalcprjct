@@ -1,0 +1,19 @@
+body 
+{
+	
+	font-family: all;
+	font-size:auto;
+	
+
+}
+.row{
+
+	 border-right: 2px dotted blue;
+	 border-left:2px dotted blue;
+	 border-top : 2px dotted blue;
+	border-bottom: 2px dotted blue;
+	background-color: lightcyan;
+}
+.col-md-4 {
+    background-color:lightgrey;
+}

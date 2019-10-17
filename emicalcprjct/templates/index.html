@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form method=POST action="{{ url_for('cal') }}">
+                <h1>EMI Calculator </h1>
+                <div class="form-group">
+                    <label for="PA">Principal amount (in rupees): </label>
+                    <input type="number" class="form-control" name="principal_amount" value ="{{ session['pa'] }}" placeholder="Enter the Principal amount in Rs.">
+                </div>
+                <br/>
+
+                <div class="form-group">
+                    <label for="rate">Rate of Interest (in %):</label>
+                    <input type="number" step="0.01" class="form-control" name="rate" value ="{{ session['ri'] }}" placeholder="Enter the rate of Interest in %">
+                </div>
+                <br/>
+
+                <div class="form-group">
+                    <label for="Term">Term (in Year):</label>
+                    <input type="number" class="form-control" name="term" value ="{{ session['tenureterm'] }}" placeholder="Enter the term in year">
+                </div>
+                <br/>
+                <br/>
+                <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+                <div class="form-display">
+                    <label for="disp">EMI Calculated: {{ session['emi'] }}</label>
+                </div>
+
+                <div class="form-display">
+                    <label for="flag">{% if current == princ %}<p>Record already exists
+                    </p>{% endif %}</label>
+                    
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}
